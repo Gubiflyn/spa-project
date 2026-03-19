@@ -3,7 +3,7 @@ name: CI pipeline
 
 on:
   pull_request:
-  psuh:
+  push:
     branches:
       - develop
 
