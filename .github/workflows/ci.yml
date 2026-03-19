@@ -1,0 +1,33 @@
+#comando para dar el nombre del flujo
+name: CI pipeline
+
+on:
+  pull_request:
+  psuh:
+    branches:
+      - develop
+
+#Acciones que se ejecutaran en el servidor 
+jobs:
+  fronted-build:
+    runs-on: ubuntu-latest
+
+    defautlts:
+      run:
+        working-directory: fronted
+
+    
+    steps:
+      - name: Checkout repository (git clone)
+        uses: actions/checkout@v4
+
+      - name: Setup node (instalar node)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: instalar dependencias
+        run: npm install
+
+      - name: Construir fronted
+        run: npm run build
