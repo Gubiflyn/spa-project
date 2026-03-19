@@ -1,4 +1,3 @@
-#comando para dar el nombre del flujo
 name: CI pipeline
 
 on:
@@ -7,16 +6,14 @@ on:
     branches:
       - develop
 
-#Acciones que se ejecutaran en el servidor 
 jobs:
-  fronted-build:
+  frontend-build:
     runs-on: ubuntu-latest
 
-    defautlts:
+    defaults:
       run:
-        working-directory: fronted
+        working-directory: frontend
 
-    
     steps:
       - name: Checkout repository (git clone)
         uses: actions/checkout@v4
@@ -29,5 +26,5 @@ jobs:
       - name: instalar dependencias
         run: npm install
 
-      - name: Construir fronted
+      - name: Construir frontend
         run: npm run build
