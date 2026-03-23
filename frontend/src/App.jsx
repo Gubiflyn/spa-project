@@ -27,8 +27,8 @@ function App() {
         {planes.map(plan => (
           <li key={plan.id}>
             <h3>{plan.nombre}</h3>
-            <h3>{plan.descripcion}</h3>
-            <strong>{personalbar.precio}</strong>
+            <p>{plan.descripcion}</p>
+            <strong>{plan.precio}</strong>
 
 
           </li>
